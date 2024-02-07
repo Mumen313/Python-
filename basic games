@@ -1,1 +1,21 @@
 # Python-
+
+import random
+
+# Generate a random number between 1 and 10
+random_number = random.randint(1, 10)
+
+# Give the user 3 chances to guess the number
+for _ in range(3):
+    guess = int(input("Guess the random number between 1 and 10: "))
+
+    # Check if the guess is correct
+    if guess == random_number:
+        print("Congratulations! You guessed the correct number.")
+        break
+    else:
+        print(f"Sorry, the random number was {random_number}. Try again!")
+
+# If the user couldn't guess the number after 3 attempts, reveal the correct number
+if guess != random_number:
+    print(f"The random number was {random_number}. Better luck next time!")
