@@ -1,1 +1,92 @@
+import random
+
+# Generate a random DNA sequence of specified length
+def generate_random_sequence(length):
+    bases = ['A', 'C', 'G', 'T']
+    sequence = ''
+    for _ in range(length):
+        sequence += random.choice(bases)
+    return sequence
+
+# Reverse a DNA sequence
+def reverse_sequence(sequence):
+    reversed_sequence = ''
+    for base in reversed(sequence):
+        reversed_sequence += base
+    return reversed_sequence
+
+# Main code
+length = int(input("Enter the length of the DNA sequence: "))
+
+# Generate a random DNA sequence
+random_sequence = generate_random_sequence(length)
+print("Random DNA Sequence:", random_sequence)
+
+# Reverse the random sequence
+reversed_sequence = reverse_sequence(random_sequence)
+print("Reversed DNA Sequence:", reversed_sequence)
+--------------------
+sequence = "TAGCCC"
+reversed_sequence = ''.join(reversed(sequence))
+print(reversed_sequence)
+--------------------
+# only DNA seq
+import random
+
+# Generate a random DNA sequence of specified length
+def generate_random_sequence(length):
+    bases = ['A', 'C', 'G', 'T']
+    sequence = ''
+    for _ in range(length):
+        sequence += random.choice(bases)
+    return sequence
+ # Generate a random DNA sequence
+length = int(input ('enter an numenr ')) 
+random_sequence = generate_random_sequence(length)
+print("Random DNA Sequence:", random_sequence)
+
+
+
+
+# Reverse a DNA sequence
+def reverse_sequence(sequence):
+    reversed_sequence = ''
+    for base in reversed(sequence):
+        reversed_sequence += base
+    return reversed_sequence
+# Reverse the random sequence
+reversed_sequence = reverse_sequence(random_sequence)
+print("Reversed DNA Sequence:", reversed_sequence)
+####
+------
+-> Prof
+import random
+
+def generate_random_sequence(length):
+    """Generate a random DNA sequence of specified length."""
+    bases = ['A', 'C', 'G', 'T']
+    return ''.join(random.choice(bases) for _ in range(length))
+
+def reverse_complement(sequence):
+    """Find the reverse complement of a DNA sequence."""
+    complement = {'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A'}
+    return ''.join(complement[base] for base in reversed(sequence))
+
+def reverse_sequence(sequence):
+    """Reverse a DNA sequence."""
+    return sequence[::-1]
+
+def main():
+    length = int(input("Enter the length of the DNA sequence: "))
+    random_sequence = generate_random_sequence(length)
+    print("Random Sequence:", random_sequence)
+
+    reverse_complement_sequence = reverse_complement(random_sequence)
+    print("Reverse Complement Sequence:", reverse_complement_sequence)
+
+    reverse_complement_sequence_reversed = reverse_sequence(reverse_complement_sequence)
+    print("Reversed Reverse Complement Sequence:", reverse_complement_sequence_reversed)
+
+if __name__ == "__main__":
+    main()
 
